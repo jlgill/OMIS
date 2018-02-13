@@ -1,0 +1,4 @@
+Let(
+    Num = Int ( Random * ( Maximum - Minimum + 1 ) ) + Minimum;
+    If( Num ≤ Maximum and Num ≥ Minimum ; Num ; RandomNumber( Minimum; Maximum ) )
+  )

@@ -1,0 +1,23 @@
+If ( 
+
+//the sql call results in an error, return empty so the error will be returned
+_executeSQL = "?" ; "" ; 
+
+//the sql call is executed correctly, just return the result
+_executeSQL
+)
+
+// ===================================
+/*
+
+    This function is published on FileMaker Custom Functions
+    to check for updates and provide feedback and bug reports
+    please visit http://www.fmfunctions.com/fid/335
+
+    Prototype: sql.debug( _executeSQL )
+    Function Author: Andries Heylen (http://www.fmfunctions.com/mid/57)
+    Last updated: 28 July 2012
+    Version: 2.2
+
+*/
+// ===================================

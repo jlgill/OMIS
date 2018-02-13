@@ -1,0 +1,54 @@
+/*---------------------------------------------------------------
+Function Name: TimeFormatAs
+
+Syntax: TimeFormatAs ( theTime; type12or24 )
+
+Author - Jonathan Mickelson, Thought Development Corp.
+(www.thought-dev.com)
+---------------------------------------------------------------*/
+Case ( not IsEmpty ( theTime ) ; 
+Let ( 
+ [ 
+// FIXED VARIABLES
+padHoursChar           = "" ;        //   Character to pad the Hours with in a text result, (Ex."0", " ", "")
+padAMPMChar         = " " ;      //   Character to pad the AM/PM with in a text result, (Ex."0", " ", "")
+suffixAM                  = "AM" ;  //    <------------ CHANGE AM Suffix Here
+suffixPM                  = "PM" ;   //    <------------ CHANGE PM Suffix Here
+
+// DYN. VARIABLES
+theTime = GetAsTime ( theTime ) ;  
+hasSeconds = PatternCount ( GetAsText ( theTime ) ; ":" ) = 2 ; 
+secs = Mod ( Seconds ( theTime ) ; 60 ) ; 
+mins = Mod ( Minute ( theTime ) ; 60 ) + Div ( Seconds ( theTime ) ; 60 ) ; 
+hours = Hour ( theTime ) + Div ( Minute ( theTime ) ; 60 ) ; 
+
+
+// -------------- BEGIN 24 HOUR TIME CALC ----------------------
+
+result24 = GetAsTime ( theTime ) + 1 - 1 ; 
+
+// -------------- BEGIN 12 HOUR TIME CALC ----------------------
+
+hours = Mod ( Hour ( theTime ) ; 12 ) ; 
+
+tempHours =  Case ( ( hours < 1 ) or ( hours - 12 = 0 ) ; 12 ; hours ) ; 
+calc12Hours = 
+                     Left ( 
+                              padHoursChar & padHoursChar ; 
+                              2 - Length ( tempHours ) 
+                             ) & 
+                             tempHours ; 
+calc12Minutes = Left ( "00" ; 2 - Length ( mins ) ) & mins ; 
+calc12Seconds = Left ( "00" ; 2 - Length ( secs ) ) & secs ;
+calc12Suffix    = Case ( Mod ( Hour ( theTime ) ; 24 ) >= 12 ; suffixPM ; suffixAM ) ; 
+result12          = calc12Hours & 
+                          ":" & calc12Minutes & 
+                          // if original time included a non-zero seconds value, display seconds
+                          Case ( hasSeconds and secs > 0 ; ":" & calc12Seconds ) &  
+                          padAMPMChar & calc12Suffix 
+] ; 
+
+Case ( type12or24 >= "24" ; result24 ; result12 ) // END CASE
+
+) // END LET
+) // END CASE

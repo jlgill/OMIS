@@ -1,0 +1,11 @@
+Let ( [
+value = LeftValues ( listOfValues ; 1 ) ;
+nextList = RightValues ( listOfValues ; ValueCount ( listOfValues ) - 1 )
+] ;
+Case ( PatternCount ( value ; searchString ) ; value )
+&
+Case ( 
+PatternCount ( nextList ; searchString ) ;
+ValuesContaining ( nextList ; searchString )
+)
+)

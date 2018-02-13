@@ -1,0 +1,32 @@
+Let([
+    valCount = ValueCount(listValues);
+    plainVal = LeftValues(listValues;1);
+    plainVal = Left( plainVal ; Length(plainVal) - 1 );
+    value =    If( not IsEmpty(plainVal) ; 
+            Case(
+              dataType = "int" or dataType = "number" ; GetAsNumber(plainVal) ;
+              dataType = "date" or dataType = "time" or dataType = "timestamp" ; GetAsTimestamp(plainVal);
+              dataType = "string" or dataType = "text"  or dataType = "" ; Quote(plainVal)
+            )
+        );
+    curTest = Substitute( test ; "value" ; value );
+    result =    If( IsEmpty(value) ; 0 ; Evaluate(curTest) )
+];
+    If( result ; plainVal & If( valCount > 0 ; ¶ ) )
+    & If( valCount > 0 ;  list.filter( MiddleValues( listValues ; 2 ; valCount - 1 ) ; test  ; dataType )  )
+)
+
+// ===================================
+/*
+
+    This function is published on FileMaker Custom Functions
+    to check for updates and provide feedback and bug reports
+    please visit http://www.fmfunctions.com/fid/86
+
+    Prototype: list.filter( listValues; test; dataType )
+    Function Author: Genx (http://www.fmfunctions.com/mid/29)
+    Last updated: 01 February 2009
+    Version: 1.4
+
+*/
+// ===================================

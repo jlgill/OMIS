@@ -1,0 +1,6 @@
+Let ( [
+	singleQuote = "'" ; 
+	ValuesToSQLArguments = singleQuote & Substitute ( TheValues ; "¶" ; singleQuote & "," & singleQuote ) & singleQuote
+] ;
+	ValuesToSQLArguments
+)

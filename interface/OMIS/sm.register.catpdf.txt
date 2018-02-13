@@ -1,0 +1,31 @@
+RegisterGroovy( "CatPDF( filelist ; fm_fileOut )" ; "// catPDFforms ( filelist ; fm_fileOut )¶
+// 12_11_27 JR¶
+// v1.0¶
+// simple concatenate list of PDF files including files with Acrofields¶
+// assumes fields do NOT have the same names¶
+// throws PASSWORD ERROR if a file is protected¶
+¶
+import com.itextpdf.text.pdf.PdfReader¶
+import com.itextpdf.text.pdf.PdfCopyFields¶
+¶
+files = filelist.split('\n')¶
+copy = new PdfCopyFields(new FileOutputStream(fm_fileOut)) ¶
+try {¶
+	files.each{item ->¶
+		reader = new PdfReader(\"${item}\")¶
+		added = copy.addDocument(reader)¶
+	} //end each¶
+	copy.close()¶
+} catch(Exception e) {¶
+	copy.close()¶
+	if (e.toString().contains('BadPassword')) { ¶
+		f = new File(fm_fileOut)¶
+		f.delete()¶
+		return 'PASSWORD ERROR'¶
+	} else {¶
+//		return 'ERROR'¶
+		return e.toString()¶
+	} //end if¶
+} //end try¶
+¶
+return true"; "isGui=false" )

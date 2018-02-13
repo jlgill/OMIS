@@ -1,0 +1,8 @@
+Let ( [
+	$i = $I + 1 ;
+	~data = BE_JSONPath ( JSON ; "$.results[0].address_components") ;
+	~counterMax = BE_JSON_ArraySize ( ~data ) - 1 ;
+	~data = BE_JSONPath ( JSON ; "$.results[0].address_components[" & $i & "]" )
+	];
+	Case ( $i ≤ ~counterMax;ParseGoogleMapsAPI ( ~data ) )
+)

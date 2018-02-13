@@ -1,0 +1,8 @@
+/* BubbleSort_SlideValue is used by the BubbleSort function */
+
+Let ( [ totalValues = ValueCount ( inputvalues ) ] ;
+
+Case ( target < totalValues ;
+BubbleSort_SlideValue ( Case ( MiddleValues ( inputvalues ; target ; 1 ) > MiddleValues ( inputvalues ; target + 1 ; 1 ) ; LeftValues ( inputvalues ; target - 1) & MiddleValues ( inputvalues ; target + 1 ; 1 ) & MiddleValues ( inputvalues ; target ; 1 ) & RightValues ( inputvalues ; totalValues - ( target + 1 ) ) ; 
+inputvalues ) ; target + 1 ) ;
+inputvalues ) )

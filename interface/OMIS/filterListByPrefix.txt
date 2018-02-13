@@ -1,0 +1,34 @@
+Let ( [
+
+	// Counter increment
+	$counter = If ( IsEmpty ( $counter ) ; 1 ; $counter + 1 ) ;
+	$total = If ( IsEmpty ( $total ) ; ValueCount ( _theList ) ; $total )
+
+] ;
+
+	// Exit Condition
+	If ( $counter > $total ;
+
+		Let ( [ $counter = "" ; $total = "" ; ~return = $newList ; $newList = "" ] ; ~return )
+
+	;
+
+
+	// Process the current value
+
+		Let ( [
+		
+			~thisValue = GetValue ( _theList ; $counter ) ;
+			~match = If ( Left ( ~thisValue ; Length ( _thePrefix ) ) = _thePrefix ; 1 ; 0 ) ;
+			~quoted = "'" & ~thisValue & "'" ;
+			$newList = If ( ~match = 1 ; If ( IsEmpty ( $newList ) ; ~quoted ; $newList & "," & ~quoted ) ; $newList )
+
+		] ;
+
+			filterListByPrefix ( _theList ; _thePrefix )
+		)
+
+	)
+
+
+)

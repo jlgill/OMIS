@@ -1,0 +1,7 @@
+Let ( [
+
+	pathToTrim = $~scDownloadFile ;
+	trimmedPath = Substitute ( pathToTrim ; "filemac:" ; "" )
+];
+trimmedPath
+)

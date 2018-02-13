@@ -1,0 +1,12 @@
+/*
+
+TAT_TO_CALCULATE ( TurnaroundTime (NUM) )
+
+returns the number of working days between the two dates and only returns either a 0 (False) for either invalid dates (End Date is After the Start Date) or a 0 for no turnaround days).
+
+*/
+
+
+Case ( 
+	TAT_TO_CALCULATE  ≤ 0 ; 0 ; TAT_TO_CALCULATE - 1
+)

@@ -1,0 +1,56 @@
+/*
+=====================================================
+file.setpath( location; subfolder; os )
+
+RETURNS:    (string) path to file/folder location.
+PARAMS      location = (string) name of the folder location
+            subfolder = (string) any subfolders you wish to append
+            os = (bool) whether the result should be an os path versus an fmp path
+DEPS:       none
+NOTES:      none
+=====================================================
+*/
+
+Let(
+[
+_Windows = Abs( Get( SystemPlatform ) ) - 1;
+
+_Paths = "Let( [
+            _Windows = Abs( Get( SystemPlatform ) ) - 1;
+
+            _Desktop     = Get( DesktopPath );
+            _Documents   = Get( DocumentsPath );
+            _Application = Get( FileMakerPath );
+            _File        = Substitute( Get( FilePath ) ; \"file:\" ; \"\" );
+            _Preferences = Get( PreferencesPath );
+            _Temp        = If ( _Windows; Substitute ( _Documents ; \"My Documents\" ; \"Local Settings\" ) & \"Temp/\"; \"/private/tmp/\" );
+            _Extensions  = Get( FileMakerPath ) & \"Extensions/\"
+
+            ];¶_" &
+            locationName
+            & ")";
+
+// Only these values for folder are possible
+_Match = "Desktop Documents Application File Preferences Temp Extensions";
+
+// Generate the actual path
+_Path = If ( PatternCount( _Match ; locationName );  Evaluate( _Paths ) ; locationName ) & If ( not IsEmpty( subfolder ); subfolder );
+
+// Remove the filename
+_File = Get( FileName ) & ".fp7";
+_HasFile = Right( _Path; Length( _File )) = _File;
+_Path = If ( _HasFile; Substitute( _Path; _File; ""); _Path )
+
+// Platform specific adjustments
+//_OsPath = Let ( [
+//  _MacPath = If ( location = "Temp" ; _Path ; "/Volumes" & _Path );
+//  _WinPath = Middle ( Substitute ( _Path; "/"; "\\") ; 2 ; 100000 )
+//  ];
+//  
+//  If ( _Windows; _WinPath; _MacPath )
+//)
+];
+
+_Path
+
+)

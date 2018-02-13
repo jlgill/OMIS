@@ -1,0 +1,8 @@
+//   Usage:  CleanText ( Text )
+//   by Tim Cimbura, Cimbura.com Technology   http://www.cimbura.com
+
+Let ( [
+	newtext = Substitute ( Text ; [ " " ; ""]; [ "{" ; ""]; [ "}" ; ""]; [ "|" ; ""]; [ "%" ; ""] );
+	newtext1= Filter ( newtext ; "abcdefghjiklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!'\"@#$%^&*()+=-?<>,./|[]{}¶ " )
+ 	] ; 
+newtext1 )
