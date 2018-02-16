@@ -1,0 +1,16 @@
+Let( [ TempNum= Filter ( number; "0123456789" ) ;
+//remove leading 1
+Num = If ( Left ( tempnum ; 1 )  = 1 ; Middle ( tempnum ; 2 ; 99 ) ; tempnum ) ;
+      
+Phone = If ( Length ( num ) = 7 ; Left ( num ; 3 ) & "-" &  Middle ( num ; 4 ; 4 ) ;
+             "("& Left ( num ; 3 ) &
+             ") "& Middle ( num ; 4 ; 3 ) &
+              "-"& Middle ( num ; 7 ; 4 ) &
+// if it exceeds a length assume it is an extension 
+               If ( Length ( num ) > 10; " x"& Middle ( num ; 11 ; 99 ) ; "" ) ) ] ;
+
+If(Length ( Num ) = 8 or Length ( Num ) = 9 or Length ( Num )  <  7; 
+           // if number is to short less than 10 digits display it in red as error
+      TextColor ( phone ; RGB ( 255 ; 0 ; 0 ) ) ; 
+           // remove color format
+      TextColor ( phone ; RGB ( 0 ; 0 ; 0 ) ) ) )

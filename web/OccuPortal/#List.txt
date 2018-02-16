@@ -1,0 +1,90 @@
+/**
+ * =====================================
+ * #List ( value )
+ *
+ * RETURNS:
+ *		Encoded value with trailing return and data type preserved.
+ *
+ * PARAMETERS:
+ *		value: The value to encode.
+ *
+ * EXAMPLE:
+ *		#List ( "value1" )
+ *		& #List (
+ *			#List ( "subValue" )
+ *			&  #List ( "subValue2" )
+ *		)
+ *
+ * DEPENDENCIES: none
+ *
+ * HISTORY:
+ *		MODIFIED on 2013-12-24 by Jeremy Bante <http://scr.im/jbante> to
+ *		specially encode newline characters in values, and to update type
+ *		detection to match the # function.
+ *		MODIFIED on 2013-MAY-09 by Daniel Smith dansmith65@gmail.com to encode
+ *		a value like the current version of # ( name ; value ) custom function
+ *		CREATED on 2012-NOV-26 by Daniel Smith dansmith65@gmail.com
+ * =====================================
+ */
+
+Let ( [
+	~text = GetAsText ( value ) ;
+	~number = GetAsNumber ( value ) ;
+	~validDate =
+		IsValid ( GetAsDate ( ~text ) )
+		and not IsEmpty ( ~number ) ;
+	~validTime =
+		IsValid ( GetAsTime ( ~text ) )
+		and Position ( ~text ; ":" ; 1 ; 1 ) > 0
+		and not IsEmpty ( ~number ) ;
+	~value =
+		Case (
+			value = "" or value = "?" ;
+				Quote ( value ) ;
+
+			~validTime and ~validDate ;
+				"GetAsTimestamp ( " & Quote ( value ) & " )" ;
+
+			~validTime ;
+				"GetAsTime ( " & Quote ( value ) & " )" ;
+
+			~validDate ;
+				"GetAsDate ( " & Quote ( value ) & " )" ;
+
+			~text ≠ GetAsText ( ~number ) ;
+				Substitute ( Quote ( value ) ;
+					[ Char ( 10 ) ; "\" & Char ( 10 ) & \"" ] ;
+					[ Char ( 8232 ) ; "\" & Char ( 8232 ) & \"" ] ;
+					[ Char ( 8233 ) ; "\" & Char ( 8233 ) & \"" ]
+				) ;
+
+			/* Else */
+				~number
+		)
+] ;
+	Case (
+		IsValidExpression ( ~value )
+			/**
+			 * the following Evaluate statement causes the function to calculate
+			 *  ~30% slower, so it may be best to comment it in a production
+			 * environment and only use it for development/testing
+			 */
+			// and Evaluate ( ~value ) = value
+		;
+		~value & ¶ ;
+
+		//else, ~value is not a valid expression...
+		"/* Error "
+		& 1200	// Generic calculation error
+		& " value: "
+		& Quote (
+			Substitute (	// escape comment character sequences
+				value ;
+				[ "*/" ; "\*\/" ] ;
+				[ "/*" ; "\/\*" ]
+			)
+		)
+		& " */"
+		& ¶
+	)
+)

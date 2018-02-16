@@ -1,0 +1,44 @@
+/*
+ * =====================================================
+ * WindowProperties ( )
+ * 
+ * RETURNS:
+ * 		Let () formatted list of global variables with prefix of 'window'
+ *
+ * PARAMETERS:
+ *		none
+ *
+ * EXAMPLES:
+ * 		Substitute ( WindowProperties ; "$$" ; "$" ) //= locally scoped $window[Value] variables
+ * 		Substitute ( WindowProperties ; "$$" ; "$parent" ) //= locally scoped $parentwindow[Value] variables
+ *
+ * RETURNS:
+ *		formatted global let variables
+ *
+ * DEPENDENCIES:
+ *		none
+ *
+ * NOTES:
+ *		See WindowCenter companion function. It will center a window within a parent
+ *		window when $parentWindow[Value] variables are set.
+ * =====================================================
+ * 
+ */
+
+Substitute (
+	List (
+		"$$windowName = " & Quote ( Get ( WindowName ) );
+		"$$windowLayout = " & Quote ( Get ( LayoutName ) );
+		"$$windowLayoutID = " & GetValue ( LayoutIDs ( Get ( FileName ) ) ; Get ( LayoutNumber ) );
+		"$$windowTop = " & Get ( WindowTop );
+		"$$windowLeft = " & Get ( WindowLeft );
+		"$$windowWidth = " & Get ( WindowWidth );
+		"$$windowHeight = " & Get ( WindowHeight );
+		"$$windowViewAs = " & Get ( LayoutViewState );
+		"$$windowMode = " & Get ( WindowMode );
+		"$$windowStatusArea = " & Get ( StatusAreaState );
+		"$$windowZoomLevel = " & Get ( WindowZoomLevel );
+		"$$windowTextRuler = " & Get ( TextRulerVisible );
+	);
+	[ ¶ ; ";¶" ] // adding semi colons to each line
+)

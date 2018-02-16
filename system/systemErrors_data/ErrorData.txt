@@ -1,0 +1,57 @@
+/**
+ * =====================================
+ * ErrorData ( )
+ *
+ * PURPOSE:
+ *		Provide extended error related information when calling the Error() function
+ *		
+ * RETURNS:
+ *		A Let() formatted array of error related variables used by Error()
+ *		
+ * PARAMETERS:
+ *		none
+ *
+ * EXAMPLES:
+ * 		(see Error function)
+ *
+ * DEPENDENCIES:
+ *		none
+ *
+ * NOTES:
+ *		ErrorData is expected to be modified based on the solution being
+ *		designed. Additional information may be added to the result of
+ *		ErrorData for the purpose of capturing the error data into an error
+ *		log table. Anything contained within this funtion is provided within
+ *		the reserved variable of $errorData and can be evaluated with the
+ *		#Assign() function. You can append your own fixed error data or
+ *		include any other error related functions.
+ *
+ * HISTORY:
+ *		MODIFIED on 2011-03-20 by matt@filemakermagazine.com - reformatted
+ *
+ * REFERENCES:
+ *		none
+ * =====================================
+ */
+
+Substitute (
+	List (
+"$errorFile=" & Quote ( Get ( FileName ) );
+	"$errorType=" & Quote ( If ( IsEmpty ( $errorType ) ; "fmp" ; $errorType ) );
+	"$scriptName=" & Quote ( Get ( ScriptName ) );
+	"$scriptParameter=" & Quote ( Get ( ScriptParameter ) );
+	"$scriptResult=" & Quote ( Get ( ScriptResult ) );
+	"$lastError=" & Quote ( Get ( LastError ) );
+	"$lastODBCError=" & Quote ( Get ( LastExternalErrorDetail ) );
+	"$layoutName=" & Quote ( Get ( LayoutName ) );
+	"$layoutTableName=" & Quote ( Get ( LayoutTableName ) );
+	"$recordOpenCount=" & Quote ( Get ( RecordOpenCount ) );
+	"$recordModificationCount=" & Quote ( Get ( RecordModificationCount ) );
+	"$activeFieldName=" & Quote ( Get ( ActiveFieldName ) );
+	"$activeFieldTableName=" & Quote ( Get ( ActiveFieldTableName ) );
+	"$activeLayoutObjectName=" & Quote ( Get ( ActiveLayoutObjectName ) );
+	"$myApplicationVersion=" & Quote ( $$APP.VERSION );
+
+	);
+	[ ¶ ; ";¶" ]
+)
