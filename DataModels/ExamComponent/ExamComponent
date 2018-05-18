@@ -1,0 +1,21 @@
+ExamComponent
+  billingCode n
+  billingCodeReferenceName s
+  componentName s
+  description s
+  flag_schedulingOverride
+  authorizationText s
+  componentType s
+  laboratoryName
+  testCode n
+  accuratePrice n
+  billedPrice n
+  flag_fasting b
+  clinicName
+  Requirements[0]
+    type s
+    descriptiveText s
+    dateCreated d
+    dateOfService d
+    dateScheduled d
+    dateReceived d

@@ -1,0 +1,27 @@
+{
+  "ExamComponent": {
+    "billingCode": 0,
+    "billingCodeReferenceName": "",
+    "componentName": "",
+    "description": "",
+    "flag_schedulingOverride": {},
+    "authorizationText": "",
+    "componentType": "",
+    "laboratoryName": {},
+    "testCode": 0,
+    "accuratePrice": 0,
+    "billedPrice": 0,
+    "flag_fasting": false,
+    "clinicName": {},
+    "Requirements": [
+      {
+        "type": "",
+        "descriptiveText": "",
+        "dateCreated": "2018-05-18T23:26:15.779Z",
+        "dateOfService": "2018-05-18T23:26:15.779Z",
+        "dateScheduled": "2018-05-18T23:26:15.779Z",
+        "dateReceived": "2018-05-18T23:26:15.779Z"
+      }
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "Exam": {
+    "id": 0,
+    "employer": "",
+    "examType": "",
+    "deptContract": "",
+    "jobClass": "",
+    "dateCreated": "2018-05-18T23:35:03.782Z",
+    "dateScheduled": "2018-05-18T23:35:03.782Z",
+    "dateReceived": "2018-05-18T23:35:03.782Z",
+    "dateComplete": "2018-05-18T23:35:03.782Z",
+    "decision_initial": "",
+    "decision_date_initial": "2018-05-18T23:35:03.782Z",
+    "decision_final": "",
+    "decision_date_final": "2018-05-18T23:35:03.783Z",
+    "status": ""
+  }
+}

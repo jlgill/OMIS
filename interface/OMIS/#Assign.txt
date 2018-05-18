@@ -44,5 +44,3 @@ Let ( [
 	~error = 0	// indicate success or failure of Evaluate()
 	or Let ( $#Assign.error = ~error ; False )	// only runs on error
 )
-
-Test text

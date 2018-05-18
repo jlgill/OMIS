@@ -1,0 +1,29 @@
+ExamReview
+  ReviewNote s
+  Recommendation s
+  recommendationLanguage s
+  recommendationDescription s
+  reviewFindings[0]
+    standardName s
+    standardLanguage s
+    flag_supervisoryCondition b
+    flag_printedMedicalCondition b
+    flag_omitCondition b
+    recommendationAtTimeOfCreation s
+  Applicant
+    nameLast t
+    nameFirst t
+  Bluesheet
+    BluesheetLineItem[0]
+      lineItemName s
+      lineItemStatus s
+  Exam
+    DateComplete d
+    ExceptionNotes[0]
+      billingExceptionContent s
+  CaseRefferal
+    Employer s
+    DeptContract s
+    EvaluationType s
+    DeploymentCountry s
+    DeploymentCenter s

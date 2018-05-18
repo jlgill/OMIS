@@ -1,0 +1,65 @@
+{
+  "Applicant": {
+    "nameFirst": "",
+    "nameLast": "",
+    "gender": "",
+    "dateOfBirth": "2018-05-17T18:56:23.551Z",
+    "Title": ""
+  },
+  "Exam": {
+    "employer": "",
+    "deptContract": "",
+    "examType": "",
+    "jobClass": ""
+  },
+  "Bluesheet": {
+    "LineItem": [
+      {
+        "lineItemName": "",
+        "lineItemStatus": "",
+        "occuVaxStatus": "",
+        "LineItemRequirements": [
+          {
+            "vax_seriesName": "",
+            "vax_prerequisite": "",
+            "vax_nextInSeries": "",
+            "examComponentName": "",
+            "examComponentType": "",
+            "validityOverRide": false,
+            "immunityOverride": false,
+            "dateCreated": "2018-05-17T18:56:23.552Z",
+            "dateOfService": "2018-05-17T18:56:23.552Z",
+            "dateScheduled": "2018-05-17T18:56:23.552Z",
+            "dateReceived": "2018-05-17T18:56:23.552Z",
+            "dateComplete": "2018-05-17T18:56:23.552Z",
+            "ValidityCriteria": [
+              {
+                "fieldName": "",
+                "nextInSeries": "",
+                "calc": "",
+                "units": 0,
+                "duration": "",
+                "dateValidation": "",
+                "dateValidationPrerequisite": "",
+                "subConditionPrerequisite": ""
+              }
+            ],
+            "CompleteCriteria": [
+              {
+                "fieldName": "",
+                "nextInSeries": "",
+                "calc": "",
+                "units": "",
+                "duration": 0,
+                "dateValidation": "",
+                "dateValidationPrerequisite": "",
+                "subConditionPrerequisite": "",
+                "Status": ""
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

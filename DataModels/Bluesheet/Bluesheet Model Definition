@@ -1,0 +1,49 @@
+Applicant
+  nameFirst s
+  nameLast s
+  gender s
+  dateOfBirth d
+  Title s 
+Exam
+  employer s
+  deptContract s
+  examType s
+  jobClass s
+Bluesheet
+  LineItem[0]
+    lineItemName s
+    lineItemStatus s
+    occuVaxStatus s
+    LineItemRequirements[0]
+      vax_seriesName s
+      vax_prerequisite s
+      vax_nextInSeries s
+      examComponentName s
+      examComponentType s
+      validityOverRide b
+      immunityOverride b
+      dateCreated d
+      dateOfService d
+      dateScheduled d
+      dateReceived d
+      dateComplete d
+      ValidityCriteria[0]
+        fieldName s
+        nextInSeries s
+        calc s
+        units n
+        duration s
+        dateValidation s
+        dateValidationPrerequisite s
+        subConditionPrerequisite s
+      CompleteCriteria[0]
+        fieldName s
+        nextInSeries s
+        calc s
+        units s
+        duration n
+        dateValidation s
+        dateValidationPrerequisite s
+        subConditionPrerequisite s
+        Status s
+

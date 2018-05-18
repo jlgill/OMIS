@@ -1,0 +1,45 @@
+{
+  "ExamReview": {
+    "ReviewNote": "",
+    "Recommendation": "",
+    "recommendationLanguage": "",
+    "recommendationDescription": "",
+    "reviewFindings": [
+      {
+        "standardName": "",
+        "standardLanguage": "",
+        "flag_supervisoryCondition": false,
+        "flag_printedMedicalCondition": false,
+        "flag_omitCondition": false,
+        "recommendationAtTimeOfCreation": ""
+      }
+    ],
+    "Applicant": {
+      "nameLast": {},
+      "nameFirst": {}
+    },
+    "Bluesheet": {
+      "BluesheetLineItem": [
+        {
+          "lineItemName": "",
+          "lineItemStatus": ""
+        }
+      ]
+    },
+    "Exam": {
+      "DateComplete": "2018-05-17T18:41:55.445Z",
+      "ExceptionNotes": [
+        {
+          "billingExceptionContent": ""
+        }
+      ]
+    },
+    "CaseRefferal": {
+      "Employer": "",
+      "DeptContract": "",
+      "EvaluationType": "",
+      "DeploymentCountry": "",
+      "DeploymentCenter": ""
+    }
+  }
+}

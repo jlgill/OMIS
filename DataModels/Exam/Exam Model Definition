@@ -1,0 +1,15 @@
+Exam
+  id n
+  employer s
+  examType s
+  deptContract s
+  jobClass s
+  dateCreated d
+  dateScheduled d
+  dateReceived d
+  dateComplete d
+  decision_initial s
+  decision_date_initial d
+  decision_final s
+  decision_date_final d
+  status s
