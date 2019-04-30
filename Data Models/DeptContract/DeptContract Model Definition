@@ -1,0 +1,19 @@
+DeptContract
+  id n
+  object t
+  name t
+  bluesheetType t
+  networkType t
+  protocolType t
+  status t
+  Contacts[0]
+  Preferences[0]
+    followup_immunizations
+    ssn_settings
+    dob_settings
+    cleansed_exam_note
+    mesr_standard_language
+    medical_standard_name
+    page_1_custom_text
+    page_2_custom_text
+  MedicalNetworks[0]

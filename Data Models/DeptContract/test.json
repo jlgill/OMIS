@@ -1,0 +1,25 @@
+{
+  "DeptContract": {
+    "id": 0,
+    "object": {},
+    "name": {},
+    "bluesheetType": {},
+    "networkType": {},
+    "protocolType": {},
+    "status": {},
+    "Contacts": [],
+    "Preferences": [
+      {
+        "followup_immunizations": {},
+        "ssn_settings": {},
+        "dob_settings": {},
+        "cleansed_exam_note": {},
+        "mesr_standard_language": {},
+        "medical_standard_name": {},
+        "page_1_custom_text": {},
+        "page_2_custom_text": {}
+      }
+    ],
+    "MedicalNetworks": []
+  }
+}

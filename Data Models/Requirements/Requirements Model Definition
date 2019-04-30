@@ -1,0 +1,7 @@
+Applicant
+  id n
+  nameLast t
+  nameFirst t
+  dateOfBirth d
+  gender t
+  title t

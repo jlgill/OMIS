@@ -28,6 +28,7 @@ Bluesheet
       dateReceived d
       dateComplete d
       ValidityCriteria[0]
+	id n
         fieldName s
         nextInSeries s
         calc s
@@ -36,7 +37,11 @@ Bluesheet
         dateValidation s
         dateValidationPrerequisite s
         subConditionPrerequisite s
+        status s
       CompleteCriteria[0]
+	id n
+	flag_exempt b
+	flag_invalid b
         fieldName s
         nextInSeries s
         calc s
@@ -45,5 +50,5 @@ Bluesheet
         dateValidation s
         dateValidationPrerequisite s
         subConditionPrerequisite s
-        Status s
+        status s
 
