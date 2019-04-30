@@ -1,6 +1,0 @@
-//Case ( 
-//not Developer ; "/Occu-Med Shared/Exams and Reports/"& Year(Get(CurrentDate)) &" Exams-Reports/" &Month(Get(CurrentDate)) & "-"& MonthName(Get(CurrentDate))& " " & Year(Get(CurrentDate)) & " Reports/"&Month(Get(CurrentDate)) & "-" & Day(Get(CurrentDate)) & "-" & Year(Get(CurrentDate)) & " Reports/1 - Report Preparation Folder/" ;
-
-//"/Active Cases/Daily Reports/"& Year(Get(CurrentDate)) &" Exams-Reports/" &Month(Get(CurrentDate)) & "-"& MonthName(Get(CurrentDate))& " " & Year(Get(CurrentDate)) & " Reports/" &Month(Get(CurrentDate)) & "-" & Day(Get(CurrentDate)) & "-" & Year(Get(CurrentDate)) & " Reports/1 - Report Preparation Folder/"
-
-"/Active Cases/Daily Reports/1 - Report Preparation Folder/"

@@ -1,6 +1,0 @@
-Let ( [
-	~i = Number + 1 ;
-	~ListResult = List ( ~i ; Number )
-	];
-	Case ( ~i < 10 ; MyCounter ( ~i ) ; ~ListResult )
-)

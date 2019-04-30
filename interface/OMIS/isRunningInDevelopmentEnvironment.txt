@@ -1,1 +1,0 @@
-PatternCount ( Get ( HostName ) ; "fmdev" ) = True

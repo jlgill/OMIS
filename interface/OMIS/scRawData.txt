@@ -1,7 +1,0 @@
-//"http://10.0.0.1:8020/SuperContainer/RawData"
-
-
-
-Case ( 
-	Developer ; "http://houston.occu-med.com:8020/SuperContainer/RawData" ; "http://10.0.0.1:8020/SuperContainer/RawData"
-)

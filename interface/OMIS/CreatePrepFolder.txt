@@ -1,1 +1,0 @@
-"Occu-Med Shared:Exams and Reports:"  & Year(Get(CurrentDate)) &" Exams-Reports:" &Month(Get(CurrentDate)) & "-"& MonthName(Get(CurrentDate))& " " & Year(Get(CurrentDate)) & " Reports:" &Month(Get(CurrentDate)) & "-" & Day(Get(CurrentDate)) & "-" & Year(Get(CurrentDate)) & " Reports"

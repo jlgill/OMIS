@@ -1,1 +1,0 @@
-Case ( iterations > 1 ; BubbleSort ( BubbleSort_SlideValue ( inputValues ; 1 ) ; iterations - 1) ; inputValues )

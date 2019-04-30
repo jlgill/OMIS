@@ -1,6 +1,0 @@
-Let ( [
-	xml = XML ];
-
-	# ( "CWSJobID" ;  ExtractData ( XML ; "FaxWS:JobId" ; 1 ) ) &	# ( "ErrorCode" ; ExtractData ( XML ; "FaxWS:ErrorCode" ; 1 ) ) &
-	# ( "ErrorString" ; ExtractData ( XML ; "FaxWS:ErrorString" ; 1 ) )
-)

@@ -1,5 +1,0 @@
-Let([
-	IDS_Faxes=Substitute ( IDS_Faxes ; ¶ ; "</JobId></item><item><JobId>" );
-	IDS_Faxes= "<item> <JobId>"  & IDS_Faxes & "</JobId></item>"] ;
-"<SOAP-ENV:Envelope xmlns:SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/'><SOAP-ENV:Header/><SOAP-ENV:Body><GetRealTimeFaxStatusEx2 xmlns='urn:FaxWS'><UserID>" & FaxUserID & "</UserID><strPIN>" & FaxPIN & "</strPIN><FaxJobIds>" & IDS_Faxes & "</FaxJobIds></GetRealTimeFaxStatusEx2></SOAP-ENV:Body></SOAP-ENV:Envelope>"
-)

@@ -1,8 +1,0 @@
-// FileMaker 13 Required!
-
-Let (
-[
-x = Lower ( GetContainerAttribute ( String ; "md5" ) )
-]
-; If ( x = "?" ; "" ; x )
-)

@@ -1,8 +1,0 @@
-Let (
-	ssn = Filter ( ssn ; "0123456789" ) ;
-Case ( 
-	Length ( SSN ) = 9 ; Left ( SSN ; 3 ) & "-" &  Middle ( SSN ; 4 ; 2 ) & "-" & Right ( SSN ; 4 ) ;
-	Length ( SSN ) = 4 ; "xxx-xx-" & SSN ;
-	IsEmpty ( SSN ) ; "" ;
-	)
-)

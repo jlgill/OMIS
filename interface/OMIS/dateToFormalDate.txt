@@ -1,3 +1,0 @@
-//Returns input date as DayOfWeek, MonthName, Date, 4-Digit Year for formatting in MESR letters
-
-DayName ( input ) & ", " & MonthName ( input ) & " " & Day ( input ) & ", " & Year ( input )
